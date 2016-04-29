@@ -1,6 +1,7 @@
 package com.gmail.webuitest;
 
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -9,10 +10,10 @@ import com.gmail.webuitest.pageobjects.EmailAccountPage;
 import com.gmail.webuitest.pageobjects.EmailComposePage;
 import com.gmail.webuitest.pageobjects.EmailViewPage;
 import com.gmail.webuitest.pageobjects.PasswordPage;
-import com.gmail.webuitest.pageobjects.UserNamePage;
+import com.gmail.webuitest.pageobjects.EmailHomePage;
 import com.gmail.webuitest.util.WebUtil;
 
-import junit.framework.Assert;
+
 
 public class GmailSignInTest {
 	
@@ -22,7 +23,7 @@ public class GmailSignInTest {
 	public void gmailLoginShouldBeSuccessful(){
 		
 		//1. Go to Gmail Website
-		UserNamePage userNamePage = WebUtil.goToSignInPage(driver);
+		EmailHomePage userNamePage = WebUtil.goToSignInPage(driver);
 
 		//2. Fill in the User Name
 		userNamePage.fillUserName(driver,"itsdeepan@gmail.com");
@@ -50,13 +51,13 @@ public class GmailSignInTest {
 	public void sendAndReceiveMailTest()
 	{
 		//1. Go to Gmail Website
-		UserNamePage userNamePage = WebUtil.goToSignInPage(driver);
+		EmailHomePage emailHomePage = WebUtil.goToSignInPage(driver);
 
 		//2. Fill in the User Name
-		userNamePage.fillUserName(driver,"itsdeepan@gmail.com");
+		emailHomePage.fillUserName(driver,"itsdeepan@gmail.com");
 
 		//3. Click Next button
-		PasswordPage passwordPage = userNamePage.clickNextButton(driver);
+		PasswordPage passwordPage = emailHomePage.clickNextButton(driver);
 		
 		//4. Fill in the password
 		passwordPage.fillPassword(driver,"3@SW156hy");
@@ -95,7 +96,7 @@ public class GmailSignInTest {
 		Assert.assertEquals("Body message should be the same.",expectedBodyMsg,actualBodyMsg );
 		
 		//10. Signout
-		userNamePage = emailAccountPage.clickSignOut(driver);
+		emailHomePage = emailAccountPage.clickSignOut(driver);
 		
 	}
 	

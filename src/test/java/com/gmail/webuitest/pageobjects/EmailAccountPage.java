@@ -9,12 +9,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class EmailAccountPage {
 
-	public UserNamePage clickSignOut(WebDriver driver) {
+	public EmailHomePage clickSignOut(WebDriver driver) {
 		WebElement profileButton = driver.findElement(By.xpath(".//div[@id='gbwa']/following-sibling::div[2]//a"));
 		profileButton.click();
 		WebElement signoutLinkage = driver.findElement(By.xpath("//a[@id='gb_71']"));
 		signoutLinkage.click();
-		return PageFactory.initElements(driver, UserNamePage.class);
+		return PageFactory.initElements(driver, EmailHomePage.class);
 	}
 
 	public boolean isInboxExist(WebDriver driver) {
