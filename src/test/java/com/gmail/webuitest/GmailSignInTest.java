@@ -44,7 +44,7 @@ public class GmailSignInTest {
 		emailHomePage = emailAccountPage.clickSignOut(driver);
 		
 		//8. Verify user did signout
-		Assert.assertTrue("Signin button should exist",emailHomePage.isSignInButtonExixt(driver));
+		Assert.assertTrue("Signin button should exist",emailHomePage.isSignInButtonExist(driver));
 	}
 	
 	@Test

@@ -24,7 +24,7 @@ public class EmailHomePage {
 		return PageFactory.initElements(driver, PasswordPage.class);
 	}
 
-	public boolean isSignInButtonExixt(WebDriver driver) {
+	public boolean isSignInButtonExist(WebDriver driver) {
 		
 		WebDriverWait wait = new WebDriverWait(driver,30);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='signIn']")));

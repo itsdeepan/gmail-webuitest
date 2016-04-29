@@ -19,7 +19,7 @@ public class EmailComposePage {
 	}
 
 	public void fillSubject(WebDriver driver, String subject) {
-		WebElement subjectText = driver.findElement(By.xpath(".//input[@name='subjectbox']"));
+		WebElement subjectText = driver.findElement(By.xpath("//input[@name='subjectbox']"));
 		subjectText.clear();
 		subjectText.sendKeys(subject);
 		
