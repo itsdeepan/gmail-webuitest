@@ -20,14 +20,14 @@ public class EmailAccountPage {
 	public boolean isInboxExist(WebDriver driver) {
 		
 		WebDriverWait wait = new WebDriverWait(driver,30);
-		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//a[contains(@title,'Inbox')]")));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[contains(@title,'Inbox')]")));
 		return driver.findElements(By.partialLinkText("Inbox")).size() > 0;
 		
 	}
 
 	public EmailComposePage clickComposeButton(WebDriver driver) {
 		WebDriverWait wait = new WebDriverWait(driver,30);
-		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//div[@role='button'][@gh='cm']")));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@role='button'][@gh='cm']")));
 		WebElement composeButton = driver.findElement(By.xpath("//div[@role='button'][@gh='cm']"));
 		composeButton.click();
 		return PageFactory.initElements(driver, EmailComposePage.class);
@@ -35,7 +35,7 @@ public class EmailAccountPage {
 
 	public void clickInboxWithNewMail(WebDriver driver) {
 		WebDriverWait wait = new WebDriverWait(driver,30);
-		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//a[contains(@title,'Inbox')]")));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[contains(@title,'Inbox')]")));
 		WebElement inboxLinkage = driver.findElement(By.xpath("//a[contains(@title,'Inbox')]"));
 		inboxLinkage.click();
 		
@@ -43,7 +43,7 @@ public class EmailAccountPage {
 
 	public EmailViewPage clickNewEmail(WebDriver driver) {
 		WebDriverWait wait = new WebDriverWait(driver,30);
-		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//div[@class='y6']/span/b")));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='y6']/span/b")));
 		WebElement newEmail = driver.findElement(By.xpath("//div[@class='y6']/span/b"));
 		newEmail.click();
 		return PageFactory.initElements(driver, EmailViewPage.class);

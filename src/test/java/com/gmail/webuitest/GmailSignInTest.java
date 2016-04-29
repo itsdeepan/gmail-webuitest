@@ -23,13 +23,13 @@ public class GmailSignInTest {
 	public void gmailLoginShouldBeSuccessful(){
 		
 		//1. Go to Gmail Website
-		EmailHomePage userNamePage = WebUtil.goToSignInPage(driver);
+		EmailHomePage emailHomePage = WebUtil.goToSignInPage(driver);
 
 		//2. Fill in the User Name
-		userNamePage.fillUserName(driver,"itsdeepan@gmail.com");
+		emailHomePage.fillUserName(driver,"itsdeepan@gmail.com");
 
 		//3. Click Next button
-		PasswordPage passwordPage = userNamePage.clickNextButton(driver);
+		PasswordPage passwordPage = emailHomePage.clickNextButton(driver);
 		
 		//4. Fill in the password
 		passwordPage.fillPassword(driver,"3@SW156hy");
@@ -41,10 +41,10 @@ public class GmailSignInTest {
 		Assert.assertTrue("Inbox should exist",emailAccountPage.isInboxExist(driver));
 		
 		//7. Signout
-		userNamePage = emailAccountPage.clickSignOut(driver);
+		emailHomePage = emailAccountPage.clickSignOut(driver);
 		
 		//8. Verify user did signout
-		Assert.assertTrue("Signin button should exist",userNamePage.isSignInButtonExixt(driver));
+		Assert.assertTrue("Signin button should exist",emailHomePage.isSignInButtonExixt(driver));
 	}
 	
 	@Test

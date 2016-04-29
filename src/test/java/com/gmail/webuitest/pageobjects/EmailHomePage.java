@@ -27,7 +27,7 @@ public class EmailHomePage {
 	public boolean isSignInButtonExixt(WebDriver driver) {
 		
 		WebDriverWait wait = new WebDriverWait(driver,30);
-		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//input[@id='signIn']")));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='signIn']")));
 		return driver.findElements(By.xpath("//input[@id='signIn']")).size() > 0;
 		
 	}

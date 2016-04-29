@@ -12,7 +12,7 @@ public class PasswordPage {
 	public void fillPassword(WebDriver driver, String password) {
 		
 		WebDriverWait wait = new WebDriverWait(driver,30);
-		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//input[@id='Passwd']")));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='Passwd']")));
 		WebElement passwordTextBox = driver.findElement(By.xpath("//input[@id='Passwd']"));
 		passwordTextBox.clear();
 		passwordTextBox.sendKeys(password);

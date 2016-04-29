@@ -11,7 +11,7 @@ public class EmailComposePage {
 
 	public void fillRecipient(WebDriver driver, String recipient) {
 		WebDriverWait wait = new WebDriverWait(driver,30);
-		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//textarea[@role='combobox'][@tabindex='1']")));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//textarea[@role='combobox'][@tabindex='1']")));
 		WebElement recipientText = driver.findElement(By.xpath("//textarea[@role='combobox'][@tabindex='1']"));
 		recipientText.clear();
 		recipientText.sendKeys(recipient);
